@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.apichiyu.project.dao.mybatis.FileStorageDao">
+    <resultMap id="resultMap" type="xyz.apichiyu.project.entity.FileStorage">
+        <id column="id" property="id"/>
+        <result column="url" property="url"/>
+        <result column="filePath" property="filePath"/>
+        <result column="md5" property="md5"/>
+        <result column="ext" property="ext"/>
+    </resultMap>
+    <insert id="add" parameterType="xyz.apichiyu.project.entity.FileStorage">
+
+    </insert>
+    <insert id="addAll" parameterType="List">
+
+    </insert>
+    <select resultMap="" id="findById" parameterType="String">
+
+    </select>
+    <select resultMap="" id="findByForm" parameterType="xyz.apichiyu.project.searchForm.FileStorageSearchForm">
+        <if test="fuzzy == true">
+
+        </if>
+        <if test="fuzzy != true">
+
+        </if>
+        limit 1
+    </select>
+    <select id="searchByForm" resultMap="" parameterType="xyz.apichiyu.project.searchForm.FileStorageSearchForm">
+        <if test="fuzzy == true">
+
+        </if>
+        <if test="fuzzy != true">
+
+        </if>
+        order by #{sortBy} #{sortType}
+        <if test="pager == true">
+            limit ${(page-1)*pageRows},${page*pageRows-1}
+        </if>
+    </select>
+    <update id="update" parameterType="xyz.apichiyu.project.entity.FileStorage">
+
+    </update>
+    <update id="updateAll">
+        <if test="form.fuzzy == true">
+
+        </if>
+        <if test="form.fuzzy != true">
+
+        </if>
+    </update>
+    <delete id="delete" parameterType="xyz.apichiyu.project.entity.FileStorage">
+
+    </delete>
+    <delete id="deleteAll" parameterType="xyz.apichiyu.project.searchForm.FileStorageSearchForm">
+        <if test="fuzzy == true">
+
+        </if>
+        <if test="fuzzy != true">
+
+        </if>
+    </delete>
+</mapper>
